@@ -85,7 +85,7 @@ export const Specialists = () => {
         <Header title="MENTAL HEALTH" sections={sections} />
         {/* specialists */}
         <ImageList sx={{ width: "100%" }}>
-          <ImageListItem key="Subheader" cols={2}>
+          <ImageListItem key="Subheader" cols={3}>
             <ListSubheader component="div">
               <h1>Our Specialists</h1>
             </ListSubheader>
