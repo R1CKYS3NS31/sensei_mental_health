@@ -21,7 +21,7 @@ const sections = [
   { title: "Home", url: "/" },
   { title: "About", url: "#" },
   { title: "Service", url: "#" },
-  { title: "Our Specialists", url: "#" },
+  { title: "Our Specialists", url: "/specialists" },
   { title: "Testimonial", url: "#" },
   { title: "Contact", url: "#" },
   { title: "Apointment", url: "#" },

@@ -14,7 +14,7 @@ const sections = [
   { title: "Home", url: "/" },
   { title: "About", url: "#" },
   { title: "Service", url: "#" },
-  { title: "Our Specialists", url: "#" },
+  { title: "Our Specialists", url: "/specialists" },
   { title: "Testimonial", url: "#" },
   { title: "Contact", url: "#" },
   { title: "Apointment", url: "#" },
@@ -22,76 +22,58 @@ const sections = [
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
+    img: "https://images.unsplash.com/photo-1592947945242-69312358628b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    title: "John Akiro",
     author: "@bkristastucchio",
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
+    img: "https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Jane Kelly",
     author: "@rollelflex_graphy726",
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
+    img: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBzeWNoaWF0cmlzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    title: "George Patrick",
     author: "@helloimnik",
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
+    img: "https://plus.unsplash.com/premium_photo-1661320847584-032675bb9377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHBzeWNoaWF0cmlzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Mercy Elline",
     author: "@nolanissac",
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
+    img: "https://images.unsplash.com/photo-1572985025600-43351572529e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBzeWNoaWF0cmlzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Harry Kane",
     author: "@hjrc33",
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
+    img: "https://images.unsplash.com/photo-1629904869742-6e8ccbd0f78b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Adnrew Mathews",
     author: "@arwinneil",
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
+    img: "https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Scott Oliver",
     author: "@tjdragotta",
+    rows: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-    author: "@katie_wasserman",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
-    author: "@silverdalex",
+    img: "https://images.unsplash.com/photo-1629904869742-6e8ccbd0f78b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Adnrew Mathews",
+    author: "@arwinneil",
     rows: 2,
     cols: 2,
+    featured: true,
   },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
-    author: "@shelleypauls",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
-    author: "@peterlaster",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
-    author: "@southside_customs",
-    cols: 2,
-  },
+
 ];
 
 const theme = createTheme();
@@ -102,7 +84,7 @@ export const Specialists = () => {
       <Container maxWidth="lg">
         <Header title="MENTAL HEALTH" sections={sections} />
         {/* specialists */}
-        <ImageList sx={{ width: '100%' }}>
+        <ImageList sx={{ width: "100%" }}>
           <ImageListItem key="Subheader" cols={2}>
             <ListSubheader component="div">
               <h1>Our Specialists</h1>
