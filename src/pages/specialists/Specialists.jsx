@@ -3,12 +3,12 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "../../components/home/header/Header";
-import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
+import { Box, Grid} from "@mui/material";
 
 const sections = [
   { title: "Home", url: "/" },
@@ -21,14 +21,14 @@ const sections = [
 ];
 
 const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1592947945242-69312358628b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    title: "John Akiro",
-    author: "@bkristastucchio",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
+  // {
+  //   img: "https://images.unsplash.com/photo-1592947945242-69312358628b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  //   title: "John Akiro",
+  //   author: "@bkristastucchio",
+  //   rows: 2,
+  //   cols: 2,
+  //   featured: true,
+  // },
   {
     img: "https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHN5Y2hpYXRyaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     title: "Jane Kelly",
@@ -73,7 +73,6 @@ const itemData = [
     cols: 2,
     featured: true,
   },
-
 ];
 
 const theme = createTheme();
@@ -84,35 +83,57 @@ export const Specialists = () => {
       <Container maxWidth="lg">
         <Header title="MENTAL HEALTH" sections={sections} />
         {/* specialists */}
-        <ImageList sx={{ width: "100%" }}>
-          <ImageListItem key="Subheader" cols={3}>
-            <ListSubheader component="div">
-              <h1>Our Specialists</h1>
-            </ListSubheader>
-          </ImageListItem>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-              <ImageListItemBar
-                title={item.title}
-                subtitle={item.author}
-                actionIcon={
-                  <IconButton
-                    sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                    aria-label={`info about ${item.title}`}
-                  >
-                    <InfoIcon />
-                  </IconButton>
-                }
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
+        <ImageListItem key="Subheader" cols={3}>
+          <ListSubheader component="div">
+            <h1>Our Specialists</h1>
+          </ListSubheader>
+        </ImageListItem>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
+            {itemData.map((item, index) => (
+              <Grid
+                item
+                xs={2}
+                sm={4}
+                md={4}
+                key={index}
+                sx={{
+                  backgroundColor:
+                    theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+                  ...theme.typography.body2,
+                  padding: theme.spacing(2),
+                  textAlign: "center",
+                  color: theme.palette.text.secondary,
+                }}
+              >
+                <ImageListItem key={item.i} col={3}>
+                  <img
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    subtitle={item.author}
+                    actionIcon={
+                      <IconButton
+                        sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                        aria-label={`info about ${item.title}`}
+                      >
+                        <InfoIcon />
+                      </IconButton>
+                    }
+                  />
+                </ImageListItem>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Container>
       {/* <Footer
       title="Footer"

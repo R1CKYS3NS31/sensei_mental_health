@@ -11,6 +11,7 @@ import MainFeaturedPost from "../../components/home/mainFeaturedPost/MainFeature
 import FeaturedPost from "../../components/home/featuredPost/FeaturedPost";
 import Main from "../../components/home/main/Main";
 import Sidebar from "../../components/home/sidebar/Sidebar";
+import Disorder from "../../components/disorder/Disorder";
 // import Footer from "../../components/home/footer/Footer";
 
 // import post1 from './blog-post.1.md';
@@ -107,8 +108,9 @@ export const Home = () => {
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
+            {featuredPosts.map((post,i) => (
+              <FeaturedPost key={i} post={post} />
+              // <Disorder key={i} post={post}/>
             ))}
           </Grid>
           <Grid container spacing={5} sx={{ mt: 3 }}>
