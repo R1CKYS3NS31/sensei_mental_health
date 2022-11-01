@@ -36,7 +36,7 @@ function FeaturedPost(props) {
 
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea component="div">
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
@@ -49,14 +49,13 @@ function FeaturedPost(props) {
               {post.description}
             </Typography>
             <Typography variant="subtitle1" color="primary">
-              {/* Continue reading... */}
               <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
+                <IconButton aria-label="get help">
+                  Get help...
                   <PsychologyAlt />
                 </IconButton>
-                <IconButton aria-label="share">
-                  {/* <ShareIcon /> */}
-                </IconButton>
+             
+
                 <ExpandMore
                   expand={expanded}
                   onClick={handleExpandClick}

@@ -11,12 +11,8 @@ import MainFeaturedPost from "../../components/home/mainFeaturedPost/MainFeature
 import FeaturedPost from "../../components/home/featuredPost/FeaturedPost";
 import Main from "../../components/home/main/Main";
 import Sidebar from "../../components/home/sidebar/Sidebar";
-import Disorder from "../../components/disorder/Disorder";
 // import Footer from "../../components/home/footer/Footer";
 
-// import post1 from './blog-post.1.md';
-// import post2 from './blog-post.2.md';
-// import post3 from './blog-post.3.md';
 
 const sections = [
   { title: "Home", url: "/" },
@@ -42,7 +38,7 @@ const featuredPosts = [
     title: "Clinical Depression",
     date: "depressed mood",
     description:
-    "Also called major depression. A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life.",
+      "Also called major depression. A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life.",
     image: "https://source.unsplash.com/random",
     imageLabel: "Image Text",
   },
@@ -50,7 +46,7 @@ const featuredPosts = [
     title: "Anxiety Disorder",
     date: "panic attacks, obsessive-compulsive disorder and post-traumatic stress disorder.",
     description:
-    "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
+      "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
     image: "https://source.unsplash.com/random",
     imageLabel: "Image Text",
   },
@@ -58,7 +54,7 @@ const featuredPosts = [
     title: "Dimentia",
     date: "anxiety, loneliness, mood swings, or nervousness, depression, hallucination, or paranoia",
     description:
-    "A group of thinking and social symptoms that interferes with daily functioning. Not a specific disease, dementia is a group of conditions characterized by impairment of at least two brain functions, such as memory loss and judgement.",
+      "A group of thinking and social symptoms that interferes with daily functioning. Not a specific disease, dementia is a group of conditions characterized by impairment of at least two brain functions, such as memory loss and judgement.",
     image: "https://source.unsplash.com/random",
     imageLabel: "Image Text",
   },
@@ -66,7 +62,7 @@ const featuredPosts = [
     title: "Anxiety Disorder",
     date: "Nov 11",
     description:
-    "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
+      "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
     image: "https://source.unsplash.com/random",
     imageLabel: "Image Text",
   },
@@ -108,9 +104,8 @@ export const Home = () => {
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
-            {featuredPosts.map((post,i) => (
+            {featuredPosts.map((post, i) => (
               <FeaturedPost key={i} post={post} />
-              // <Disorder key={i} post={post}/>
             ))}
           </Grid>
           <Grid container spacing={5} sx={{ mt: 3 }}>
