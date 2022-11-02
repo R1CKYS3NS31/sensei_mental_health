@@ -6,8 +6,32 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 import { PsychologyAlt } from "@mui/icons-material";
+import { MenuItem } from "@mui/material";
 
+const currencies = [
+  {
+    value: "USD",
+    label: "$",
+  },
+  {
+    value: "EUR",
+    label: "€",
+  },
+  {
+    value: "BTC",
+    label: "฿",
+  },
+  {
+    value: "JPY",
+    label: "¥",
+  },
+];
 export default function ApplicationForm() {
+  const [currency, setCurrency] = React.useState("EUR");
+
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -23,8 +47,17 @@ export default function ApplicationForm() {
             label="Category of Help(Disoder)"
             fullWidth
             autoComplete="cc-name"
+            value={currency}
+            onChange={handleChange}
+            helperText="Please select area of help you need"
             variant="standard"
-          />
+          >
+            {currencies.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
@@ -35,7 +68,16 @@ export default function ApplicationForm() {
             fullWidth
             autoComplete="cc-number"
             variant="standard"
-          />
+            value={currency}
+            onChange={handleChange}
+            helperText="Please select area of help you need"
+          >
+            {currencies.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
         </Grid>
 
         <Grid item xs={12} md={12}>

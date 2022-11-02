@@ -52,8 +52,9 @@ function FeaturedPost(props) {
             <Typography variant="subtitle1" color="primary">
               <CardActions disableSpacing>
                 <IconButton aria-label="get help">
-                  <Link to={"/gethelp"} className={'link'}>Get help...</Link>
-                  <PsychologyAlt />
+                  <Link to={"/gethelp"} className={"link"}>
+                    Get help... <PsychologyAlt />
+                  </Link>
                 </IconButton>
 
                 <ExpandMore
