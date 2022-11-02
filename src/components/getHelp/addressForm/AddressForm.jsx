@@ -104,7 +104,7 @@ export default function AddressForm() {
             control={
               <Checkbox color="secondary" name="saveAddress" value="yes" />
             }
-            label="Use this address for payment details"
+            label="Use this address for application details"
           />
         </Grid>
       </Grid>
