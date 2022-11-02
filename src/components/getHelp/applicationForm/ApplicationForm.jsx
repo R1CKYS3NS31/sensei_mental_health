@@ -100,18 +100,9 @@ export default function ApplicationForm() {
           />
         </Grid>
         <Grid item xs={12} md={6}>
-          {/* <TextField
-            required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
-            fullWidth
-            autoComplete="cc-csc"
-            variant="standard"
-          /> */}
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
+                   <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Stack
-            //  spacing={3}
+             spacing={3}
             >
               <DateTimePicker
                 label="Date&Time picker"
