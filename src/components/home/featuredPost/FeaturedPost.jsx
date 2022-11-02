@@ -14,6 +14,7 @@ import {
   styled,
 } from "@mui/material";
 import { ExpandMoreOutlined, PsychologyAlt } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -51,10 +52,9 @@ function FeaturedPost(props) {
             <Typography variant="subtitle1" color="primary">
               <CardActions disableSpacing>
                 <IconButton aria-label="get help">
-                  Get help...
+                  <Link to={"/gethelp"} className={'link'}>Get help...</Link>
                   <PsychologyAlt />
                 </IconButton>
-             
 
                 <ExpandMore
                   expand={expanded}
