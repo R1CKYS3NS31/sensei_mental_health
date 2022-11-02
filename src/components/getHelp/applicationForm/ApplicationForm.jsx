@@ -4,9 +4,11 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { PsychologyAlt } from "@mui/icons-material";
-import { MenuItem } from "@mui/material";
+import { MenuItem, Stack } from "@mui/material";
+import dayjs from "dayjs";
+import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 
 const currencies = [
   {
@@ -27,10 +29,16 @@ const currencies = [
   },
 ];
 export default function ApplicationForm() {
+  const newDate = new Date()
   const [currency, setCurrency] = React.useState("EUR");
+  const [value, setValue] = React.useState(dayjs(newDate.Date));
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
+  };
+
+  const handleChangeDate = (newValue) => {
+    setValue(newValue);
   };
   return (
     <React.Fragment>
@@ -70,7 +78,7 @@ export default function ApplicationForm() {
             variant="standard"
             value={currency}
             onChange={handleChange}
-            helperText="Please select area of help you need"
+            helperText="Please a preferred psychiatrist"
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -91,8 +99,8 @@ export default function ApplicationForm() {
             // variant="standard"
           />
         </Grid>
-        {/* <Grid item xs={12} md={6}>
-          <TextField
+        <Grid item xs={12} md={6}>
+          {/* <TextField
             required
             id="cvv"
             label="CVV"
@@ -100,8 +108,20 @@ export default function ApplicationForm() {
             fullWidth
             autoComplete="cc-csc"
             variant="standard"
-          />
-        </Grid> */}
+          /> */}
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Stack
+            //  spacing={3}
+            >
+              <DateTimePicker
+                label="Date&Time picker"
+                value={value}
+                onChange={handleChangeDate}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </Stack>
+          </LocalizationProvider>
+        </Grid>
         <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveCard" value="yes" />}
