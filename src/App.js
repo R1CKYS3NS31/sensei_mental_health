@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Disorder from "./components/disorder/Disorder";
+import GetHelp from "./pages/getHelp/GetHelp";
 import { Home } from "./pages/home/Home";
 import SignInSide from "./pages/signIn/SignInSide";
 import SignUp from "./pages/signUp/SignUp";
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signin" element={<SignInSide/>}/>
         <Route path="/specialists" element={<Specialists/>}/>
         <Route path="/disorders" element={<Disorder/>}/>
+        <Route path="/gethelp" element={<GetHelp/>}/>
 
         {/* no route */}
         <Route
