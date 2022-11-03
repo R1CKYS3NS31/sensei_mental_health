@@ -1,0 +1,90 @@
+{
+  "disorder": [
+    {
+      "id": 1,
+      "title": "Clinical description",
+      "desc": "Also called major depression.\n A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life.",
+      "relations": "Thoughts of suicide.",
+      "symptom": "The persistent feeling of sadness or loss of interest that characterizes major depression can lead to a range of behavioral and physical symptoms. These may include changes in sleep, appetite, energy level, concentration, daily behaviors or self-esteem. Depression can also be associated with thoughts of suicide.",
+      "treatment": "Treatment consists of antidepressants. The mainstay of treatment is usually medication, talk therapy or a combination of the two. Increasingly, research suggests that these treatments may normalize brain changes associated with depression."
+    },
+    {
+      "id": 2,
+      "title": "Anxiety Disordr",
+      "desc": "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
+      "relations": "panic attacks, obsessive-compulsive disorder and post-traumatic stress disorder.",
+      "symptom": "Symptoms include stress that's out of proportion to the impact of the event, inability to set aside a worry and restlessness.",
+      "treatment": "Treatment consists of therapy. Treatment includes counseling or medication, including antidepressants."
+    },
+    {
+      "id": 3,
+      "title": "Bipolar Disorder",
+      "desc": "A disorder associated with episodes of mood swings ranging from depressive lows to manic highs. The exact cause of bipolar disorder isn't known, but a combination of genetics, environment and altered brain structure and chemistry may play a role.",
+      "relations": "depression, manic episode, agitated depression, or paranoia",
+      "symptom": "People may experience:\n Mood: mood swings, sadness, elevated mood, anger, anxiety, apathy, apprehension, euphoria, general discontent, guilt, hopelessness, loss of interest, or loss of interest or pleasure in activities\n\n Behavioral: irritability, risk-taking behaviors, disorganized behavior, aggression, agitation, crying, excess desire for sex, hyperactivity, impulsivity, restlessness, or self-harm\n\n Cognitive: unwanted thoughts, delusion, lack of concentration, racing thoughts, slowness in activity, or false belief of superiority\n\n Psychological: depression, manic episode, agitated depression, or paranoia Weight: weight gain or weight loss\n\n Sleep: difficulty falling asleep or excess sleepiness\n\n Also common: fatigue or pressure of speech",
+      "treatment": "Treatment consists of medications and therapy. Treatment is usually lifelong and often involves a combination of medications and psychotherapy"
+    },
+    {
+      "id": 4,
+      "title": "Dimensia",
+      "desc": "A group of thinking and social symptoms that interferes with daily functioning. Not a specific disease, dementia is a group of conditions characterized by impairment of at least two brain functions, such as memory loss and judgement.",
+      "relations": "depression, hallucination, or paranoia",
+      "symptom": "Symptoms include forgetfulness, limited social skills and thinking abilities so impaired that it interferes with daily functioning. People may experience: Cognitive: mental decline, confusion in the evening hours, disorientation, inability to speak or understand language, making things up, mental confusion, or inability to recognize common things Behavioral: irritability, personality changes, restlessness, lack of restraint, or wandering and getting lost Mood: anxiety, loneliness, mood swings, or nervousness Psychological: depression, hallucination, or paranoia Muscular: inability to combine muscle movements of unsteady walking Also common: memory impairment, falling, paraphasia, or sleep disorder",
+      "treatment": "Treatment depends on stage. Medication and therapies may help manage symptoms. Some causes are reversible."
+    },
+    {
+      "id": 5,
+      "title": "Attention-deficit/Hyperactivity Disorder",
+      "desc": "Also called: ADHD, attention deficit disorder. A chronic condition including attention difficulty, hyperactivity and impulsiveness. ADHD often begins in childhood and can persist into adulthood. It may contribute to low self-esteem, troubled relationships and difficulty at school or work.",
+      "relations": "anger, anxiety, boredom, excitement, or mood swing depression or learning disability.",
+      "symptom": "Symptoms include limited attention and hyperactivity. People may experience: Behavioral: aggression, excitability, fidgeting, hyperactivity, impulsivity, irritability, lack of restraint, or persistent repetition of words or actions Cognitive: absent-mindedness, difficulty focusing, forgetfulness, problem paying attention, or short attention span Mood: anger, anxiety, boredom, excitement, or mood swing. Also common: depression or learning disability",
+      "treatment": "Treatments include medication and talk therapy."
+    },
+    {
+      "id": 6,
+      "title": "Schizophrenia",
+      "desc": "A disorder that affects a person's ability to think, feel and behave clearly. The exact cause of schizophrenia isn't known, but a combination of genetics, environment and altered brain chemistry and structure may play a role.",
+      "relations": "hallucination, paranoia, hearing voices, depression, fear, persecutory delusion, memory impairment, or religious delusion",
+      "symptom": "Schizophrenia is characterised by thoughts or experiences that seem out of touch with reality, disorganised speech or behaviour and decreased participation in daily activities. Difficulty with concentration and memory may also be present. People may experience: Behavioural: social isolation, disorganised behaviour, aggression, agitation, compulsive behaviour, excitability, hostility, repetitive movements, self-harm, or lack of restraint. Cognitive: thought disorder, delusion, amnesia, belief that an ordinary event has special and personal meaning, belief that thoughts aren't one's own, disorientation, mental confusion, slowness in activity, or false belief of superiority. Mood: anger, anxiety, apathy, feeling detached from self, general discontent, loss of interest or pleasure in activities, elevated mood, or inappropriate emotional response. Psychological: hallucination, paranoia, hearing voices, depression, fear, persecutory delusion, or religious delusion. Speech: circumstantial speech, incoherent speech, rapid and frenzied speaking, or speech disorder. Also common: fatigue, impaired motor coordination, memory impairment, or restricted affect",
+      "treatment": "Treatment is usually lifelong and often involves a combination of medications, psychotherapy and coordinated speciality care services."
+    },
+    {
+      "id": 7,
+      "title": "Obsessive compulsive disorder (OCD)",
+      "desc": "Excessive thoughts (obsessions) that lead to repetitive behaviors (compulsions). Obsessive-compulsive disorder is characterized by unreasonable thoughts and fears (obsessions) that lead to compulsive behaviors.",
+      "relations": "anxiety, apprehension, guilt, depression or fear, or panic attack",
+      "symptom": "OCD often centres on themes such as a fear of germs or the need to arrange objects in a specific manner. Symptoms usually begin gradually and vary throughout life. People may experience: Behavioural: compulsive behaviour, agitation, compulsive hoarding, hypervigilance, impulsivity, meaningless repetition of own words, repetitive movements, ritualistic behaviour, social isolation, or persistent repetition of words or actions. Mood: anxiety, apprehension, guilt, or panic attack. Psychological: depression or fear. Also common: food aversion, nightmares, or rumination.",
+      "treatment": "Treatment includes talk therapy, medication or both."
+    },
+    {
+      "id": 8,
+      "title": "Autism spectrum disorder (Autism)",
+      "desc": "Widely know as: autism. A serious developmental disorder that impairs the ability to communicate and interact. Autism spectrum disorder impacts the nervous system.",
+      "relations": "unaware of others' emotions, depression, anxiety, change in voice, sensitivity to sound, or tic",
+      "symptom": "The range and severity of symptoms can vary widely. Common symptoms include difficulty with communication, difficulty with social interactions, obsessive interests and repetitive behaviours. People may experience: Behavioural: inappropriate social interaction, poor eye contact, compulsive behaviour, impulsivity, repetitive movements, self-harm, or persistent repetition of words or actions. Developmental: learning disability or speech delay in a child. Cognitive: intense interest in a limited number of things or problem paying attention. Psychological: unaware of others' emotions or depression. Also common: anxiety, change in voice, sensitivity to sound, or tic.",
+      "treatment": "Treatment consists of therapy. Early recognition, as well as behavioural, educational and family therapies may reduce symptoms and support development and learning."
+    },
+    {
+      "id": 9,
+      "title": "Post traumatic stress disorder (PSTD)",
+      "desc": "Also called: PTSD. A disorder characterised by failure to recover after experiencing or witnessing a territying event. The condition may last months or years, with triggers that can bring back memories of the trauma accompanied by intense emotional and physical reactions.",
+      "relations": "flashback, fear, severe anxiety, insomnia, nightmares, or mistrust",
+      "symptom": "Symptoms may include nightmares or flashbacks, avoidance of situations that bring back the trauma, heightened reactivity to stimuli, anxiety or depressed mood. People may experience: Behavioural: agitation, irritability, hostility, hyper-vigilance, self-destructive behaviour, or social isolation. Psychological: flashback, fear, severe anxiety, or mistrust. Mood: loss of interest or pleasure in activities, guilt, or loneliness. Sleep: insomnia or nightmares. Also common: emotional detachment or intrusive thought.",
+      "treatment": "Treatment includes different types of psychotherapy as well as medications to manage symptoms."
+    }
+    
+  ],
+  "psychiatrist": [
+    {
+      "id": 1,
+      "body": "some\n comment",
+      "postId": 1
+    }
+  ],
+  "application": {
+    "id": 1,
+    "title": "json-server",
+    "author": "typicode",
+    "name": "typicode"
+  }
+}
