@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Disorder from "./components/disorder/Disorder";
 import GetHelp from "./pages/getHelp/GetHelp";
 import { Home } from "./pages/home/Home";
 import SignInSide from "./pages/signIn/SignInSide";
@@ -8,15 +8,31 @@ import SignUp from "./pages/signUp/SignUp";
 import { Specialists } from "./pages/specialists/Specialists";
 
 function App() {
+  const [disorders, setDisorders] = useState([]);
+
+  // get disorders
+  useEffect(() => {
+    const getDisorders = async () => {
+      try {
+        const res = await fetch("http://localhost:8000/disorder");
+        const disordersData = await res.json();
+        // console.log(disordersData);
+        setDisorders(disordersData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getDisorders();
+  }, []);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} exact/>
-        <Route path="/signup" element={<SignUp/>}/>
-        <Route path="/signin" element={<SignInSide/>}/>
-        <Route path="/specialists" element={<Specialists/>}/>
-        <Route path="/disorders" element={<Disorder/>}/>
-        <Route path="/gethelp" element={<GetHelp/>}/>
+        <Route path="/" element={<Home disorders={disorders} />} exact />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignInSide />} />
+        <Route path="/specialists" element={<Specialists />} />
+        <Route path="/gethelp" element={<GetHelp />} />
 
         {/* no route */}
         <Route
