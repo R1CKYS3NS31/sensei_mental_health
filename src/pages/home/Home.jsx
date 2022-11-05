@@ -24,51 +24,15 @@ const sections = [
   { title: "Apointment", url: "#" },
 ];
 
+// edit this cover
 const mainFeaturedPost = {
-  title: "Bipolar Disorder",
+  title: "Talk To Someone",
   description:
     "A disorder associated with episodes of mood swings ranging from depressive lows to manic highs. The exact cause of bipolar disorder isn't known, but a combination of genetics, environment and altered brain structure and chemistry may play a role.",
   image: "https://source.unsplash.com/random",
   imageText: "main image description",
   linkText: "Continue reading…",
 };
-
-// const Disorders = [
-//   {
-//     title: "Clinical Depression",
-//     date: "depressed mood",
-//     description:
-//       "Also called major depression. A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life.",
-//     image: "https://source.unsplash.com/random",
-//     imageLabel: "Image Text",
-//   },
-//   {
-//     title: "Anxiety Disorder",
-//     date: "panic attacks, obsessive-compulsive disorder and post-traumatic stress disorder.",
-//     description:
-//       "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
-//     image: "https://source.unsplash.com/random",
-//     imageLabel: "Image Text",
-//   },
-//   {
-//     title: "Dimentia",
-//     date: "anxiety, loneliness, mood swings, or nervousness, depression, hallucination, or paranoia",
-//     description:
-//       "A group of thinking and social symptoms that interferes with daily functioning. Not a specific disease, dementia is a group of conditions characterized by impairment of at least two brain functions, such as memory loss and judgement.",
-//     image: "https://source.unsplash.com/random",
-//     imageLabel: "Image Text",
-//   },
-//   {
-//     title: "Anxiety Disorder",
-//     date: "Nov 11",
-//     description:
-//       "A mental health disorder characterized by feelings of worry, anxiety or fear that are strong enough to interfere with one's daily activities.",
-//     image: "https://source.unsplash.com/random",
-//     imageLabel: "Image Text",
-//   },
-// ];
-
-// const posts = [post1, post2, post3];
 
 const sidebar = {
   title: "About",

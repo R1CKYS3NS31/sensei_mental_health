@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { PsychologyAlt } from "@mui/icons-material";
 import { MenuItem, Stack } from "@mui/material";
 import dayjs from "dayjs";
@@ -28,11 +28,10 @@ const currencies = [
     label: "¥",
   },
 ];
-export default function ApplicationForm() {
-  const newDate = new Date()
+export default function ApplicationForm({ disorders }) {
+  const newDate = new Date();
   const [currency, setCurrency] = React.useState("EUR");
   const [value, setValue] = React.useState(dayjs(newDate.Date));
-
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
@@ -40,6 +39,9 @@ export default function ApplicationForm() {
   const handleChangeDate = (newValue) => {
     setValue(newValue);
   };
+  // const {title} = disorders
+  disorders.map((disorder) => console.log(disorder.title));
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -60,9 +62,9 @@ export default function ApplicationForm() {
             helperText="Please select area of help you need"
             variant="standard"
           >
-            {currencies.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
+            {disorders.map((disorder, i) => (
+              <MenuItem key={i} value={disorder.title}>
+                {disorder.title}
               </MenuItem>
             ))}
           </TextField>
@@ -100,10 +102,8 @@ export default function ApplicationForm() {
           />
         </Grid>
         <Grid item xs={12} md={6}>
-                   <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Stack
-             spacing={3}
-            >
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Stack spacing={3}>
               <DateTimePicker
                 label="Date&Time picker"
                 value={value}

@@ -13,7 +13,7 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from '../../components/getHelp/addressForm/AddressForm';
-import PaymentForm from '../../components/getHelp/applicationForm/ApplicationForm'
+import ApplicationForm from '../../components/getHelp/applicationForm/ApplicationForm'
 import Review from '../../components/getHelp/review/Review';
 
 function Copyright() {
@@ -31,23 +31,25 @@ function Copyright() {
 
 const steps = ['Personal address', 'Application details', 'Review your application'];
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-      return <PaymentForm />;
-    case 2:
-      return <Review />;
-    default:
-      throw new Error('Unknown step');
-  }
-}
+
 
 const theme = createTheme();
 
-export default function GetHelp() {
+export default function GetHelp({disorders}) {
   const [activeStep, setActiveStep] = React.useState(0);
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <AddressForm />;
+      case 1:
+        return <ApplicationForm disorders={disorders} />;
+      case 2:
+        return <Review />;
+      default:
+        throw new Error('Unknown step');
+    }
+  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
