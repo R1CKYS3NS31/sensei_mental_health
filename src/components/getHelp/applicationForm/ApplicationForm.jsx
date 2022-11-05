@@ -10,27 +10,9 @@ import { MenuItem, Stack } from "@mui/material";
 import dayjs from "dayjs";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 
-const currencies = [
-  {
-    value: "USD",
-    label: "$",
-  },
-  {
-    value: "EUR",
-    label: "€",
-  },
-  {
-    value: "BTC",
-    label: "฿",
-  },
-  {
-    value: "JPY",
-    label: "¥",
-  },
-];
 export default function ApplicationForm({ disorders }) {
   const newDate = new Date();
-  const [disorder, setDisorder] = React.useState('');
+  const [disorder, setDisorder] = React.useState("");
   const [value, setValue] = React.useState(dayjs(newDate.Date));
   const handleChange = (event) => {
     setDisorder(event.target.value);
