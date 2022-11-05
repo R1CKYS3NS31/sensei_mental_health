@@ -30,17 +30,15 @@ const currencies = [
 ];
 export default function ApplicationForm({ disorders }) {
   const newDate = new Date();
-  const [currency, setCurrency] = React.useState("EUR");
+  const [disorder, setDisorder] = React.useState('');
   const [value, setValue] = React.useState(dayjs(newDate.Date));
   const handleChange = (event) => {
-    setCurrency(event.target.value);
+    setDisorder(event.target.value);
   };
 
   const handleChangeDate = (newValue) => {
     setValue(newValue);
   };
-  // const {title} = disorders
-  disorders.map((disorder) => console.log(disorder.title));
 
   return (
     <React.Fragment>
@@ -57,13 +55,13 @@ export default function ApplicationForm({ disorders }) {
             label="Category of Help(Disoder)"
             fullWidth
             autoComplete="cc-name"
-            value={currency}
+            value={disorder}
             onChange={handleChange}
             helperText="Please select area of help you need"
             variant="standard"
           >
             {disorders.map((disorder, i) => (
-              <MenuItem key={i} value={disorder.title}>
+              <MenuItem key={disorder.id} value={disorder.title}>
                 {disorder.title}
               </MenuItem>
             ))}
@@ -78,13 +76,13 @@ export default function ApplicationForm({ disorders }) {
             fullWidth
             autoComplete="cc-number"
             variant="standard"
-            value={currency}
+            value={disorder}
             onChange={handleChange}
             helperText="Please a preferred psychiatrist"
           >
-            {currencies.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
+            {disorders.map((disorder, i) => (
+              <MenuItem key={disorder.id} value={disorder.title}>
+                {disorder.title}
               </MenuItem>
             ))}
           </TextField>
@@ -105,6 +103,7 @@ export default function ApplicationForm({ disorders }) {
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Stack spacing={3}>
               <DateTimePicker
+                required
                 label="Date&Time picker"
                 value={value}
                 onChange={handleChangeDate}
