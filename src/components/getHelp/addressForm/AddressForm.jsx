@@ -126,25 +126,11 @@ export default function AddressForm() {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, ml: 3 }}
+            sx={{ mt: 3, mb: 2, ml: 3, fontWeight: 600, backgroundColor:'lightblue' }}
           >
             Submit Address Details
           </Button>
-        </Grid>
-        {/* <input
-          style={{
-            width: "100%",
-            padding: "5px",
-            fontSize: "20px",
-            fontWeight: 500,
-            backgroundColor: "lightgreen",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-          type="submit"
-          value={"Submit Address Details"}
-        /> */}
+        </Grid>       
       </form>
     </React.Fragment>
   );
