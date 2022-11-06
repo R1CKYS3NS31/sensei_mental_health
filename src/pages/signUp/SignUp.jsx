@@ -30,13 +30,14 @@ function Copyright(props) {
   const theme = createTheme();
   
   export default function SignUp() {
+
     const handleSubmit = (event) => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
       console.log({
         email: data.get('email'),
         password: data.get('password'),
-        username:data.get('firstName')
+        firstname:data.get('firstName')
       });
     };
   
@@ -58,7 +59,8 @@ function Copyright(props) {
             <Typography component="h1" variant="h5">
               Sign up
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <form onSubmit={handleSubmit}>
+            {/* <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}> */}
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -124,7 +126,9 @@ function Copyright(props) {
                   </Link>
                 </Grid>
               </Grid>
-            </Box>
+            {/* </Box> */}
+            </form>
+            
           </Box>
           <Copyright sx={{ mt: 5 }} />
         </Container>
