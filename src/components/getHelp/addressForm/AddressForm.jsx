@@ -11,7 +11,7 @@ export default function AddressForm() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      firstname: data.get("firstName"),
+      firstName: data.get("firstName"),
       lastName: data.get("lastName"),
       email: data.get("email"),
       phoneNumber: data.get("phoneNumber"),
