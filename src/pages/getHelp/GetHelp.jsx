@@ -1,53 +1,63 @@
-import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import Paper from '@mui/material/Paper';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import AddressForm from '../../components/getHelp/addressForm/AddressForm';
-import ApplicationForm from '../../components/getHelp/applicationForm/ApplicationForm'
-import Review from '../../components/getHelp/review/Review';
+import CssBaseline from "@mui/material/CssBaseline";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import Paper from "@mui/material/Paper";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import AddressForm from "../../components/getHelp/addressForm/AddressForm";
+import ApplicationForm from "../../components/getHelp/applicationForm/ApplicationForm";
+import Review from "../../components/getHelp/review/Review";
+import { Fragment, useEffect, useState } from "react";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" href="https://localhost:3000/">
         mentalhealth
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
 
-const steps = ['Personal address', 'Application details', 'Review your application'];
-
-
+const steps = [
+  "Personal address",
+  "Application details",
+  "Review your application",
+];
 
 const theme = createTheme();
 
-export default function GetHelp({disorders}) {
-  const [activeStep, setActiveStep] = React.useState(0);
+export default function GetHelp({ disorders }) {
+  const [activeStep, setActiveStep] = useState(0);
+  const [addressData, setAddressData] = useState({})
+  const [applicationData, setApplicationData] = useState({})
+  // const [detailsData, setDetailsData] = useState({});
 
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <AddressForm />;
+        return <AddressForm getAddressData={getAddressData} />;
       case 1:
-        return <ApplicationForm disorders={disorders} />;
+        return (
+          <ApplicationForm
+            disorders={disorders}
+            getApplicationData={getApplicationData}
+          />
+        );
       case 2:
-        return <Review />;
+        return <Review addressData={addressData} applicationData={applicationData}/>;
       default:
-        throw new Error('Unknown step');
+        throw new Error("Unknown step");
     }
   }
 
@@ -59,6 +69,21 @@ export default function GetHelp({disorders}) {
     setActiveStep(activeStep - 1);
   };
 
+  const getAddressData = (data) => {
+    //
+    // setDetailsData({
+    //   ...detailsData,
+    //   data,
+    // });
+    setAddressData(data)
+    
+  };
+  const getApplicationData = (data) => {
+    setApplicationData(data)
+  };
+  
+  // console.log({addressData,applicationData});
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -67,18 +92,21 @@ export default function GetHelp({disorders}) {
         color="default"
         elevation={0}
         sx={{
-          position: 'relative',
+          position: "relative",
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
       >
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Mental Health
+            <Link href="/">Mental Health</Link>
           </Typography>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-        <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+        <Paper
+          variant="outlined"
+          sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+        >
           <Typography component="h1" variant="h4" align="center">
             GET HELP
           </Typography>
@@ -90,35 +118,37 @@ export default function GetHelp({disorders}) {
             ))}
           </Stepper>
           {activeStep === steps.length ? (
-            <React.Fragment>
+            <Fragment>
               <Typography variant="h5" gutterBottom>
                 Thank you for your application.
               </Typography>
               <Typography variant="subtitle1">
-                Your application number is #2001539. We have emailed your application
-                confirmation, and will send you an update when your application to get help has
-                assigned to the your preferred psychiatrist.
+                Your application number is #2001539. We have emailed your
+                application confirmation, and will send you an update when your
+                application to get help has assigned to the your preferred
+                psychiatrist.
               </Typography>
-            </React.Fragment>
+            </Fragment>
           ) : (
-            <React.Fragment>
+            <Fragment>
               {getStepContent(activeStep)}
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                 {activeStep !== 0 && (
                   <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
                     Back
                   </Button>
                 )}
-
                 <Button
                   variant="contained"
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}
                 >
-                  {activeStep === steps.length - 1 ? 'Submit Application' : 'Next'}
+                  {activeStep === steps.length - 1
+                    ? "Submit Application"
+                    : "Next"}
                 </Button>
               </Box>
-            </React.Fragment>
+            </Fragment>
           )}
         </Paper>
         <Copyright />

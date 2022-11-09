@@ -10,7 +10,7 @@ import { Button, MenuItem, Stack } from "@mui/material";
 import dayjs from "dayjs";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 
-export default function ApplicationForm({ disorders }) {
+export default function ApplicationForm({ disorders,getApplicationData }) {
   const newDate = new Date();
   const [disorder, setDisorder] = React.useState("");
   const [value, setValue] = React.useState(dayjs(newDate.Date));
@@ -24,7 +24,7 @@ export default function ApplicationForm({ disorders }) {
   const onSubmitApplication = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    getApplicationData({
       disorder: data.get("disorder"),
       psychiatrist: data.get("psychiatrist"),
       experience: data.get("experience"),

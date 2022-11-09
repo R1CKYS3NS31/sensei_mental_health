@@ -6,11 +6,12 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { Button } from "@mui/material";
 
-export default function AddressForm() {
+export default function AddressForm({getAddressData}) {
+  
   const onSubmitAddress = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    getAddressData({
       firstName: data.get("firstName"),
       lastName: data.get("lastName"),
       email: data.get("email"),
@@ -19,7 +20,7 @@ export default function AddressForm() {
       province: data.get("province"),
       postalCode: data.get("postalCode"),
       country: data.get("country"),
-    });
+    })
   };
   return (
     <React.Fragment>
