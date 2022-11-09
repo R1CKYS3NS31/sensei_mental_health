@@ -6,11 +6,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { PsychologyAlt } from "@mui/icons-material";
-import { Button, MenuItem, Stack } from "@mui/material";
+import { Avatar, Button, MenuItem, Stack } from "@mui/material";
 import dayjs from "dayjs";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 
-export default function ApplicationForm({ disorders,getApplicationData }) {
+export default function ApplicationForm({ disorders, getApplicationData }) {
   const newDate = new Date();
   const [disorder, setDisorder] = React.useState("");
   const [value, setValue] = React.useState(dayjs(newDate.Date));
@@ -77,7 +77,16 @@ export default function ApplicationForm({ disorders,getApplicationData }) {
             >
               {disorders.map((disorder, i) => (
                 <MenuItem key={disorder.id} value={disorder.title}>
-                  {disorder.title}
+                  <Stack direction={"row"} sx={{alignItems:'center'}}>
+                    <Avatar
+                      sx={{ bgcolor: 'lightblue', paddingRight:'5px', justifyContent:'center', alignItems:'center' }}
+                      alt="Remy Sharp"
+                      src="https://source.unsplash.com/random"
+                    >
+                      {disorder.title.charAt(0)}
+                    </Avatar>
+                    {disorder.title}
+                  </Stack>
                 </MenuItem>
               ))}
             </TextField>

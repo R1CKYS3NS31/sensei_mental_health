@@ -39,8 +39,8 @@ const theme = createTheme();
 
 export default function GetHelp({ disorders }) {
   const [activeStep, setActiveStep] = useState(0);
-  const [addressData, setAddressData] = useState({})
-  const [applicationData, setApplicationData] = useState({})
+  const [addressData, setAddressData] = useState({});
+  const [applicationData, setApplicationData] = useState({});
   // const [detailsData, setDetailsData] = useState({});
 
   function getStepContent(step) {
@@ -55,7 +55,9 @@ export default function GetHelp({ disorders }) {
           />
         );
       case 2:
-        return <Review addressData={addressData} applicationData={applicationData}/>;
+        return (
+          <Review addressData={addressData} applicationData={applicationData} />
+        );
       default:
         throw new Error("Unknown step");
     }
@@ -75,13 +77,12 @@ export default function GetHelp({ disorders }) {
     //   ...detailsData,
     //   data,
     // });
-    setAddressData(data)
-    
+    setAddressData(data);
   };
   const getApplicationData = (data) => {
-    setApplicationData(data)
+    setApplicationData(data);
   };
-  
+
   // console.log({addressData,applicationData});
 
   return (
@@ -122,12 +123,15 @@ export default function GetHelp({ disorders }) {
               <Typography variant="h5" gutterBottom>
                 Thank you for your application.
               </Typography>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ justifyContent: "center" }}>
                 Your application number is #2001539. We have emailed your
                 application confirmation, and will send you an update when your
                 application to get help has assigned to the your preferred
                 psychiatrist.
+                
+                <Button href="/" sx={{width:'100%', backgroundColor:'lightgrey',fontWeight:600}}>Home</Button>
               </Typography>
+              
             </Fragment>
           ) : (
             <Fragment>
