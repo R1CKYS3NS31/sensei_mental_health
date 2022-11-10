@@ -112,6 +112,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
                   id="sessionDate&Time"
                   name="sessionDate&Time"
                   label="Session Date&Time"
+                  minDateTime={value}
                   value={value}
                   onChange={handleChangeDate}
                   renderInput={(params) => <TextField {...params} />}

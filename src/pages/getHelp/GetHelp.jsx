@@ -99,7 +99,7 @@ export default function GetHelp({ disorders }) {
       >
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            <Link href="/">Mental Health</Link>
+            <Link to="/">Mental Health</Link>
           </Typography>
         </Toolbar>
       </AppBar>

@@ -28,7 +28,7 @@ function Header(props) {
           <SearchIcon />
         </IconButton>
         <Button variant="outlined" size="small">
-          <Link href="/signup" style={{ textDecoration: "none" }}>
+          <Link to="/signup" style={{ textDecoration: "none" }}>
             Sign up
           </Link>
         </Button>

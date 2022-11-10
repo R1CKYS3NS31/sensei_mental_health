@@ -8,7 +8,8 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
-import { Box, Grid} from "@mui/material";
+import { Box, Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const sections = [
   { title: "Home", url: "/" },
@@ -76,7 +77,7 @@ const itemData = [
 ];
 
 const theme = createTheme();
-export const Specialists = ({psychiatrists}) => {
+export const Specialists = ({ psychiatrists }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -110,7 +111,7 @@ export const Specialists = ({psychiatrists}) => {
                   color: theme.palette.text.secondary,
                 }}
               >
-                <ImageListItem key={item.id} col={3}>
+                <ImageListItem key={item.id} col={3} sx={{ width: '100%', height:'100vh', display: { xs: "none", sm: "block" } }}>
                   <img
                     src={`${item.img}?w=248&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -125,7 +126,9 @@ export const Specialists = ({psychiatrists}) => {
                         sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                         aria-label={`info about ${item.title}`}
                       >
-                        <InfoIcon />
+                        <Link to={"/gethelp"} className={"link"}>
+                          <InfoIcon />
+                        </Link>
                       </IconButton>
                     }
                   />
