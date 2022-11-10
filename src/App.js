@@ -25,6 +25,20 @@ function App() {
     getDisorders();
   }, []);
 
+  // get psychiatrists
+  useEffect(() => {
+   const getPsychiatrists = async ()=>{
+    try {
+      const res = await fetch('http://localhost:8000/psychiatrist')
+      const psychiatristData = await res.json()
+      console.log(psychiatristData);
+
+    } catch (error) {
+      console.error(error);
+    }
+    getPsychiatrists()
+   }
+  }, [])
   return (
     <Router>
       <Routes>

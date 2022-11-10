@@ -105,11 +105,11 @@ function Disorder(props) {
 
 Disorder.propTypes = {
   disorder: PropTypes.shape({
-    date: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     imageLabel: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    symptom: PropTypes.string.isRequired,
   }).isRequired,
 };
 

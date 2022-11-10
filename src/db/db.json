@@ -19,7 +19,6 @@
       "treatment": "Treatment consists of therapy. Treatment includes counseling or medication, including antidepressants.",
       "image": "https://source.unsplash.com/random",
       "imageLabel": "Image Text"
-
     },
     {
       "id": 3,
@@ -91,13 +90,87 @@
       "image": "https://source.unsplash.com/random",
       "imageLabel": "Image Text"
     }
-    
   ],
   "psychiatrist": [
     {
       "id": 1,
-      "body": "some\n comment",
-      "postId": 1
+      "name": "Kamau Joshua Muli",
+      "specialization": "Bipolar Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 2,
+      "name": "Chris Keggar",
+      "specialization": "Dimensia",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 3,
+      "name": "Mercy Joy",
+      "specialization": "Bipolar Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 4,
+      "name": "Lizz Wangu",
+      "specialization": "Bipolar Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 5,
+      "name": "Joyce Njeri",
+      "specialization": "Dimensia",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 6,
+      "name": "Susan Wahiyua",
+      "specialization": "Dimensia",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 7,
+      "name": "Jonny May",
+      "specialization": "Anxiety Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 8,
+      "name": "Maria Nyar",
+      "specialization": "Anxiety Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 9,
+      "name": "Diana Wanjiku",
+      "specialization": "Bipolar Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 10,
+      "name": "Rose Nduku",
+      "specialization": "Bipolar Disorder",
+      "email": "email@email.com",
+      "phone": "0712345678",
+      "img": "https://source.unsplash.com/random"
     }
   ],
   "application": {
