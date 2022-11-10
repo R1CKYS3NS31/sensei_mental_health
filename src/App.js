@@ -9,43 +9,45 @@ import { Specialists } from "./pages/specialists/Specialists";
 
 function App() {
   const [disorders, setDisorders] = useState([]);
+  const [psychiatrists, setPsychiatrists] = useState([]);
 
   // get disorders
-  useEffect(() => {
-    const getDisorders = async () => {
-      try {
-        const res = await fetch("http://localhost:8000/disorder");
-        const disordersData = await res.json();
-        // console.log(disordersData);
-        setDisorders(disordersData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getDisorders();
-  }, []);
-
-  // get psychiatrists
-  useEffect(() => {
-   const getPsychiatrists = async ()=>{
+  const getDisorders = async () => {
     try {
-      const res = await fetch('http://localhost:8000/psychiatrist')
-      const psychiatristData = await res.json()
-      console.log(psychiatristData);
-
+      const res = await fetch("http://localhost:8000/disorder");
+      const disordersData = await res.json();
+      // console.log(disordersData);
+      setDisorders(disordersData);
     } catch (error) {
       console.error(error);
     }
-    getPsychiatrists()
-   }
-  }, [])
+  };
+  // get psychiatrists
+  const getPsychiatrists = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/psychiatrist");
+      const psychiatristData = await res.json();
+      // console.log(psychiatristData);
+      setPsychiatrists(psychiatristData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getDisorders();
+    getPsychiatrists();
+  }, []);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home disorders={disorders} />} exact />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignInSide />} />
-        <Route path="/specialists" element={<Specialists />} />
+        <Route
+          path="/specialists"
+          element={<Specialists psychiatrists={psychiatrists} />}
+        />
         <Route path="/gethelp" element={<GetHelp disorders={disorders} />} />
 
         {/* no route */}

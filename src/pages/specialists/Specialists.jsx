@@ -76,7 +76,7 @@ const itemData = [
 ];
 
 const theme = createTheme();
-export const Specialists = () => {
+export const Specialists = ({psychiatrists}) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -94,7 +94,7 @@ export const Specialists = () => {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {itemData.map((item, index) => (
+            {psychiatrists.map((item, index) => (
               <Grid
                 item
                 xs={2}
@@ -110,7 +110,7 @@ export const Specialists = () => {
                   color: theme.palette.text.secondary,
                 }}
               >
-                <ImageListItem key={item.i} col={3}>
+                <ImageListItem key={item.id} col={3}>
                   <img
                     src={`${item.img}?w=248&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -118,8 +118,8 @@ export const Specialists = () => {
                     loading="lazy"
                   />
                   <ImageListItemBar
-                    title={item.title}
-                    subtitle={item.author}
+                    title={item.name}
+                    subtitle={item.specialization}
                     actionIcon={
                       <IconButton
                         sx={{ color: "rgba(255, 255, 255, 0.54)" }}
