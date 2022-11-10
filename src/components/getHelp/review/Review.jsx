@@ -5,74 +5,76 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
 
-const products = [
+const addresses = [
   {
-    name: "Product 1",
-    desc: "A nice thing",
-    price: "$9.99",
+    name: "First Name",
+    detail: "George",
   },
   {
-    name: "Product 2",
-    desc: "Another thing",
-    price: "$3.45",
+    name: "Last Name",
+    // desc: 'Another thing',
+    detail: "Musinde",
   },
   {
-    name: "Product 3",
-    desc: "Something else",
-    price: "$6.51",
+    name: "Avalibale Email",
+    // desc: 'Something else',
+    detail: "georgemusinde@gmail.com",
   },
   {
-    name: "Product 4",
-    desc: "Best thing of all",
-    price: "$14.11",
+    name: "City",
+    // desc: 'Best thing of all',
+    detail: "Nairobi",
   },
-  { name: "Shipping", desc: "", price: "Free" },
+  {
+    name: "Province",
+    detail: "Nairobi",
+  },
+  {
+    name: "Postal Code",
+    detail: "100",
+  },
+  {
+    name: "Country",
+    detail: "Kenya",
+  },
 ];
 
-const addresses = ["1 MUI Drive", "Reactville", "Anytown", "99999", "USA"];
 const payments = [
-  { name: "Card type", detail: "Visa" },
-  { name: "Card holder", detail: "Mr John Smith" },
-  { name: "Card number", detail: "xxxx-xxxx-xxxx-1234" },
-  { name: "Expiry date", detail: "04/2024" },
+  { name: "Category of Help", detail: "Bipolar" },
+  { name: "Specialized Psychiatrist", detail: "Mr. John Smith" },
+  { name: "Proposed Date of Session", detail: "04/2024" },
 ];
 
 export default function Review({ addressData, applicationData }) {
+  const [addressDetails, setAddressDetails] = React.useState({});
+  const [applicationDetails, setApplicationDetails] = React.useState({});
+
   React.useEffect(() => {
-    console.log({ addressData, applicationData });
+    setAddressDetails(addressData);
+    setApplicationDetails(applicationData);
+
+    console.log({ addressDetails, applicationDetails });
   }, [addressData, applicationData]);
 
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Order summary
+      <Typography variant="h4" gutterBottom>
+        Address summary
       </Typography>
       <List disablePadding>
-        {products.map((product) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
+        {addresses.map((address) => (
+          <ListItem key={address.name} sx={{ py: 1, px: 0 }}>
+            <ListItemText primary={address.name} />
+            <Typography variant="body2" sx={{ color: "gray" }}>
+              {address.detail}
+            </Typography>
           </ListItem>
         ))}
-
-        <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
-          </Typography>
-        </ListItem>
       </List>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(", ")}</Typography>
-        </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Payment details
+          <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
+            Application Summary
           </Typography>
           <Grid container>
             {payments.map((payment) => (
@@ -81,11 +83,26 @@ export default function Review({ addressData, applicationData }) {
                   <Typography gutterBottom>{payment.name}</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
+                  <Typography gutterBottom sx={{ color: "gray" }}>
+                    {payment.detail}
+                  </Typography>
                 </Grid>
               </React.Fragment>
             ))}
           </Grid>
+          <Typography variant="h6" gutterBottom sx={{ mt: 1 }}>
+            Experience Going Through
+          </Typography>
+          <Typography
+            variant="paragraph"
+            gutterBottom
+            sx={{ mt: 2, color: "grey" }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            inventore ipsa suscipit, sed adipisci voluptates veniam laudantium
+            quaerat totam maiores debitis aspernatur, eveniet atque officia
+            odio, ex necessitatibus eos repellat.
+          </Typography>
         </Grid>
       </Grid>
     </React.Fragment>

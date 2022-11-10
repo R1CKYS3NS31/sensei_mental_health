@@ -8,7 +8,7 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AddressForm from "../../components/getHelp/addressForm/AddressForm";
@@ -20,9 +20,9 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://localhost:3000/">
+      <Link className="link" to="/">
         mentalhealth
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -99,7 +99,9 @@ export default function GetHelp({ disorders }) {
       >
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            <Link to="/">Mental Health</Link>
+            <Link to="/" className="link">
+              <h1>Mental Health</h1>
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -128,10 +130,17 @@ export default function GetHelp({ disorders }) {
                 application confirmation, and will send you an update when your
                 application to get help has assigned to the your preferred
                 psychiatrist.
-                
-                <Button href="/" sx={{width:'100%', backgroundColor:'lightgrey',fontWeight:600}}>Home</Button>
+                <Button
+                  href="/"
+                  sx={{
+                    width: "100%",
+                    backgroundColor: "lightgrey",
+                    fontWeight: 600,
+                  }}
+                >
+                  Home
+                </Button>
               </Typography>
-              
             </Fragment>
           ) : (
             <Fragment>
