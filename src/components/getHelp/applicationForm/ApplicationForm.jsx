@@ -39,6 +39,9 @@ export default function ApplicationForm({
       sessionDate: value.$d,
     });
   };
+  psychiatrists
+    .filter((psychiat) => psychiat.specialization == disorder)
+    .map((psychia) => console.log(psychia));
 
   return (
     <React.Fragment>
@@ -83,25 +86,27 @@ export default function ApplicationForm({
               onChange={handlePsychiatrists}
               helperText="Please a preferred psychiatrist"
             >
-              {psychiatrists.map((psychatrist, i) => (
-                <MenuItem key={i} value={psychatrist.name}>
-                  <Stack direction={"row"} sx={{ alignItems: "center" }}>
-                    <Avatar
-                      sx={{
-                        bgcolor: "lightblue",
-                        paddingRight: "5px",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                      alt="Remy Sharp"
-                      src={psychatrist.img}
-                    >
-                      {psychatrist.name.charAt(0)}
-                    </Avatar>
-                    {psychatrist.name}
-                  </Stack>
-                </MenuItem>
-              ))}
+              {psychiatrists
+                .filter((psychiat) => psychiat.specialization === disorder)
+                .map((psychatrist, i) => (
+                  <MenuItem key={i} value={psychatrist.name}>
+                    <Stack direction={"row"} sx={{ alignItems: "center" }}>
+                      <Avatar
+                        sx={{
+                          bgcolor: "lightblue",
+                          paddingRight: "5px",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                        alt="Remy Sharp"
+                        src={psychatrist.img}
+                      >
+                        {psychatrist.name.charAt(0)}
+                      </Avatar>
+                      {psychatrist.name}
+                    </Stack>
+                  </MenuItem>
+                ))}
             </TextField>
           </Grid>
 
