@@ -58,7 +58,7 @@ export default function Review({ addressData, applicationData }) {
   const application = [
     { name: "Category of Help", detail: applicationData.disorder },
     { name: "Specialized Psychiatrist", detail: applicationData.psychiatrist },
-    // { name: "Proposed Date of Session", detail: applicationData.sessionDate },
+    { name: "Proposed Date of Session", detail: applicationData.sessionDate },
   ];
 
   return (
@@ -82,14 +82,14 @@ export default function Review({ addressData, applicationData }) {
             Application Summary
           </Typography>
           <Grid container>
-            {application.map((payment) => (
-              <React.Fragment key={payment.name}>
+            {application.map((application) => (
+              <React.Fragment key={application.name}>
                 <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
+                  <Typography gutterBottom>{application.name}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                   <Typography gutterBottom sx={{ color: "gray", width:'100%' }}>
-                    {payment.detail}
+                    {application.detail}
                   </Typography>
                 </Grid>
               </React.Fragment>

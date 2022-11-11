@@ -36,7 +36,7 @@ export default function ApplicationForm({
       disorder: data.get("disorder"),
       psychiatrist: data.get("psychiatrist"),
       experience: data.get("experience"),
-      sessionDate: value.$d,
+      sessionDate: value.$d.toString(),
     });
   };
   psychiatrists
