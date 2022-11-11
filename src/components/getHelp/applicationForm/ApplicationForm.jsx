@@ -10,12 +10,20 @@ import { Avatar, Button, MenuItem, Stack } from "@mui/material";
 import dayjs from "dayjs";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 
-export default function ApplicationForm({ disorders, getApplicationData }) {
+export default function ApplicationForm({
+  disorders,
+  getApplicationData,
+  psychiatrists,
+}) {
   const newDate = new Date();
   const [disorder, setDisorder] = React.useState("");
+  const [psychiatrist, setPsychiatrist] = React.useState("");
   const [value, setValue] = React.useState(dayjs(newDate.Date));
   const handleChange = (event) => {
     setDisorder(event.target.value);
+  };
+  const handlePsychiatrists = (event) => {
+    setPsychiatrist(event.target.value);
   };
 
   const handleChangeDate = (newValue) => {
@@ -42,7 +50,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <TextField
-              // required
+              required
               select
               id="disorder"
               name="disorder"
@@ -63,7 +71,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
-              // required
+              required
               select
               id="psychiatrist"
               name="psychiatrist"
@@ -71,21 +79,26 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
               fullWidth
               autoComplete="cc-number"
               variant="standard"
-              value={disorder}
-              onChange={handleChange}
+              value={psychiatrist}
+              onChange={handlePsychiatrists}
               helperText="Please a preferred psychiatrist"
             >
-              {disorders.map((disorder, i) => (
-                <MenuItem key={disorder.id} value={disorder.title}>
-                  <Stack direction={"row"} sx={{alignItems:'center'}}>
+              {psychiatrists.map((psychatrist, i) => (
+                <MenuItem key={i} value={psychatrist.name}>
+                  <Stack direction={"row"} sx={{ alignItems: "center" }}>
                     <Avatar
-                      sx={{ bgcolor: 'lightblue', paddingRight:'5px', justifyContent:'center', alignItems:'center' }}
+                      sx={{
+                        bgcolor: "lightblue",
+                        paddingRight: "5px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                       alt="Remy Sharp"
-                      src="https://source.unsplash.com/random"
+                      src={psychatrist.img}
                     >
-                      {disorder.title.charAt(0)}
+                      {psychatrist.name.charAt(0)}
                     </Avatar>
-                    {disorder.title}
+                    {psychatrist.name}
                   </Stack>
                 </MenuItem>
               ))}
@@ -94,7 +107,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
 
           <Grid item xs={12} md={12}>
             <TextField
-              // required
+              required
               id="experience"
               name="experience"
               label="Brief description of issue you're experiencing"
@@ -108,7 +121,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <Stack spacing={3}>
                 <DateTimePicker
-                  // required
+                  required
                   id="sessionDate&Time"
                   name="sessionDate&Time"
                   label="Session Date&Time"

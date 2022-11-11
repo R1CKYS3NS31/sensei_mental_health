@@ -31,7 +31,7 @@ export default function AddressForm({getAddressData}) {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField
-              // required
+              required
               id="firstName"
               name="firstName"
               label="First Name"
@@ -42,7 +42,7 @@ export default function AddressForm({getAddressData}) {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              // required
+              required
               id="lastName"
               name="lastName"
               label="Last Name"
@@ -53,7 +53,7 @@ export default function AddressForm({getAddressData}) {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              // required
+              required
               id="email"
               name="email"
               label="Reachable Email"
@@ -64,7 +64,7 @@ export default function AddressForm({getAddressData}) {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              // required
+              required
               id="phoneNumber"
               name="phoneNumber"
               label="phoneNumber"
@@ -75,7 +75,7 @@ export default function AddressForm({getAddressData}) {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              // required
+              required
               id="city"
               name="city"
               label="City"
@@ -95,7 +95,7 @@ export default function AddressForm({getAddressData}) {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              // required
+              required
               id="postalCode"
               name="postalCode"
               label="Zip / Postal code"
@@ -106,7 +106,7 @@ export default function AddressForm({getAddressData}) {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              // required
+              required
               id="country"
               name="country"
               label="Country"
