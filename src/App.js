@@ -48,7 +48,7 @@ function App() {
           path="/specialists"
           element={<Specialists psychiatrists={psychiatrists} />}
         />
-        <Route path="/gethelp" element={<GetHelp disorders={disorders} />} />
+        <Route path="/gethelp" element={<GetHelp disorders={disorders} psychiatrists={psychiatrists} />} />
 
         {/* no route */}
         <Route

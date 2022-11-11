@@ -14,7 +14,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AddressForm from "../../components/getHelp/addressForm/AddressForm";
 import ApplicationForm from "../../components/getHelp/applicationForm/ApplicationForm";
 import Review from "../../components/getHelp/review/Review";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 
 function Copyright() {
   return (
@@ -37,11 +37,11 @@ const steps = [
 
 const theme = createTheme();
 
-export default function GetHelp({ disorders }) {
+export default function GetHelp({ disorders, psychiatrists }) {
   const [activeStep, setActiveStep] = useState(0);
   const [addressData, setAddressData] = useState({});
   const [applicationData, setApplicationData] = useState({});
-  // const [detailsData, setDetailsData] = useState({});
+  const [disable, setDisable] = useState(false);
 
   function getStepContent(step) {
     switch (step) {
@@ -52,6 +52,7 @@ export default function GetHelp({ disorders }) {
           <ApplicationForm
             disorders={disorders}
             getApplicationData={getApplicationData}
+            psychiatrists={psychiatrists}
           />
         );
       case 2:
@@ -72,18 +73,17 @@ export default function GetHelp({ disorders }) {
   };
 
   const getAddressData = (data) => {
-    //
-    // setDetailsData({
-    //   ...detailsData,
-    //   data,
-    // });
     setAddressData(data);
+    // if (data) {
+    //   setDisable(false);
+    // }
   };
   const getApplicationData = (data) => {
     setApplicationData(data);
+    // if (data) {
+    //   setDisable(false);
+    // }
   };
-
-  // console.log({addressData,applicationData});
 
   return (
     <ThemeProvider theme={theme}>
@@ -152,6 +152,7 @@ export default function GetHelp({ disorders }) {
                   </Button>
                 )}
                 <Button
+                  disabled={disable}
                   variant="contained"
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}

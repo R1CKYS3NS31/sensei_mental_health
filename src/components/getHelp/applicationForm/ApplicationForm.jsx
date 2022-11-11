@@ -42,7 +42,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <TextField
-              required
+              // required
               select
               id="disorder"
               name="disorder"
@@ -63,7 +63,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
-              required
+              // required
               select
               id="psychiatrist"
               name="psychiatrist"
@@ -94,7 +94,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
 
           <Grid item xs={12} md={12}>
             <TextField
-              required
+              // required
               id="experience"
               name="experience"
               label="Brief description of issue you're experiencing"
@@ -108,7 +108,7 @@ export default function ApplicationForm({ disorders, getApplicationData }) {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <Stack spacing={3}>
                 <DateTimePicker
-                  required
+                  // required
                   id="sessionDate&Time"
                   name="sessionDate&Time"
                   label="Session Date&Time"
