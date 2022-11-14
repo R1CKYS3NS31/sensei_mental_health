@@ -13,22 +13,21 @@ import Main from "../../components/home/main/Main";
 import Sidebar from "../../components/home/sidebar/Sidebar";
 // import Footer from "../../components/home/footer/Footer";
 
-
 const sections = [
   { title: "Home", url: "/" },
-  { title: "About", url: "#" },
-  { title: "Service", url: "#" },
+  // { title: "About", url: "#" },
+  // { title: "Service", url: "#" },
   { title: "Our Specialists", url: "/specialists" },
-  { title: "Testimonial", url: "#" },
-  { title: "Contact", url: "#" },
-  { title: "Apointment", url: "#" },
+  // { title: "Testimonial", url: "#" },
+  // { title: "Contact", url: "#" },
+  { title: "Apointment", url: "/gethelp" },
 ];
 
 // edit this cover
 const mainFeaturedPost = {
   title: "Talk To Someone",
   description:
-    "A disorder associated with episodes of mood swings ranging from depressive lows to manic highs. The exact cause of bipolar disorder isn't known, but a combination of genetics, environment and altered brain structure and chemistry may play a role.",
+    "Don't be ashamed to share your story it will inspire others to speak up. Mental illness doesn't make you weak, the fight with it makes you strong. Your mental illness doesn't define you but your fight with it will definitely do it. Hope is a powerful thing.",
   image: "https://source.unsplash.com/random",
   imageText: "main image description",
   linkText: "Continue reading…",
@@ -37,7 +36,7 @@ const mainFeaturedPost = {
 const sidebar = {
   title: "About",
   description:
-    "Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+    "We give a transparent way of communicating with a psychiatrist in discret channels and help how users to connect with them to overcome mental illness.",
   archives: [
     { title: "March 2020", url: "#" },
     { title: "February 2020", url: "#" },
@@ -59,12 +58,12 @@ const sidebar = {
 };
 
 const theme = createTheme();
-export const Home = ({disorders}) => {
+export const Home = ({ disorders, user }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="MENTAL HEALTH" sections={sections} />
+        <Header title="MENTAL HEALTH" sections={sections} user={user} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
@@ -87,9 +86,9 @@ export const Home = ({disorders}) => {
         </main>
       </Container>
       {/* <Footer
-      title="Footer"
-      description="Something here to give the footer a purpose!"
-    /> */}
+        title="Footer"
+        description="Something here to give the footer a purpose!"
+      /> */}
     </ThemeProvider>
   );
 };

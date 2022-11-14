@@ -6,10 +6,16 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { auth } from "../../../utils/firebase";
 
 function Header(props) {
-  const { sections, title } = props;
+  const { sections, title,user } = props;
 
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -28,9 +34,9 @@ function Header(props) {
           <SearchIcon />
         </IconButton>
 
-        <Link to="/signup" className="link">
-          <Button variant="outlined" size="small">
-            Sign up
+        <Link to="/signin" className="link">
+          <Button variant="outlined" size="small" onClick={handleAuth}>
+              {user ? "Sign Out" : "Sign In"}
           </Button>
         </Link>
       </Toolbar>

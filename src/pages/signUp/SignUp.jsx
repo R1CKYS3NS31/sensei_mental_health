@@ -12,6 +12,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { LockPersonOutlined } from "@mui/icons-material";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../utils/firebase";
 
 function Copyright(props) {
   return (

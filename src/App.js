@@ -1,3 +1,4 @@
+import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -6,10 +7,28 @@ import { Home } from "./pages/home/Home";
 import SignInSide from "./pages/signIn/SignInSide";
 import SignUp from "./pages/signUp/SignUp";
 import { Specialists } from "./pages/specialists/Specialists";
+import { auth } from "./utils/firebase";
 
 function App() {
   const [disorders, setDisorders] = useState([]);
   const [psychiatrists, setPsychiatrists] = useState([]);
+  const [user, setUser] = useState(null);
+  // check for user
+
+  useEffect(() => {
+    // run when App compenent loads
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
+        // const uid = user.uid;
+        // console.log('user: '+uid);
+        setUser(user);
+      } else {
+        // User is signed out
+        setUser(null);
+      }
+    });
+  }, []);
 
   // get disorders
   const getDisorders = async () => {
@@ -41,14 +60,23 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home disorders={disorders} />} exact />
+        <Route
+          path="/"
+          element={!user ? <SignInSide /> : <Home disorders={disorders} user={user}/>}
+          exact
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignInSide />} />
         <Route
           path="/specialists"
           element={<Specialists psychiatrists={psychiatrists} />}
         />
-        <Route path="/gethelp" element={<GetHelp disorders={disorders} psychiatrists={psychiatrists} />} />
+        <Route
+          path="/gethelp"
+          element={
+            <GetHelp disorders={disorders} psychiatrists={psychiatrists} />
+          }
+        />
 
         {/* no route */}
         <Route

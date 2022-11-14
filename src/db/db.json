@@ -175,8 +175,8 @@
   ],
   "application": {
     "id": 1,
-    "title": "json-server",
-    "author": "typicode",
-    "name": "typicode"
+    "firstName": "json-server",
+    "lastName": "typicode",
+    "nam": "typicode"
   }
 }
