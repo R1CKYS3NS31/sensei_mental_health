@@ -80,13 +80,19 @@ function Disorder(props) {
                 {/* specialists */}
                 <h3>Specailized Psychiatrist</h3>
                 <IconButton aria-label="settings">
-                  <Avatar />
+                  <Link to="/specialists">
+                    <Avatar />
+                  </Link>
                 </IconButton>
                 <IconButton aria-label="settings">
-                  <Avatar />
+                  <Link to="/specialists">
+                    <Avatar />
+                  </Link>
                 </IconButton>
                 <IconButton aria-label="settings">
-                  <Avatar />
+                  <Link to="/specialists">
+                    <Avatar />
+                  </Link>
                 </IconButton>
               </Collapse>
             </Typography>

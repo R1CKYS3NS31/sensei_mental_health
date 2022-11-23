@@ -78,7 +78,7 @@ function App() {
           }
         />
 
-        {/* no route */}
+        no route
         <Route
           path="*"
           element={

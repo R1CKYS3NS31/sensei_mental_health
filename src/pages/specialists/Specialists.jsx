@@ -13,12 +13,12 @@ import { Link } from "react-router-dom";
 
 const sections = [
   { title: "Home", url: "/" },
-  { title: "About", url: "#" },
-  { title: "Service", url: "#" },
+  // { title: "About", url: "#" },
+  // { title: "Service", url: "#" },
   { title: "Our Specialists", url: "/specialists" },
-  { title: "Testimonial", url: "#" },
-  { title: "Contact", url: "#" },
-  { title: "Apointment", url: "#" },
+  // { title: "Testimonial", url: "#" },
+  // { title: "Contact", url: "#" },
+  { title: "Apointment", url: "/gethelp" },
 ];
 
 const itemData = [

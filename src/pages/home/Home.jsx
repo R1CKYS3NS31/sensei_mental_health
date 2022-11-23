@@ -73,7 +73,7 @@ export const Home = ({ disorders, user }) => {
           </Grid>
           <Grid container spacing={5} sx={{ mt: 3 }}>
             <Main
-              title="From the firehose"
+              title="Mental Health"
               //  posts={posts}
             />
             <Sidebar

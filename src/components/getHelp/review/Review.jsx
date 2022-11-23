@@ -5,6 +5,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
 import { width } from "@mui/system";
+import { Button, Link } from "@mui/material";
+// import { Link } from "react-router-dom";
 
 export default function Review({ addressData, applicationData }) {
   const [addressDetails, setAddressDetails] = React.useState(
@@ -13,12 +15,13 @@ export default function Review({ addressData, applicationData }) {
   );
   const [applicationDetails, setApplicationDetails] = React.useState({});
 
+
   React.useEffect(() => {
     setAddressDetails(addressData);
     setApplicationDetails(applicationData);
 
     console.log({ addressDetails, applicationDetails });
-    console.log({addressData, applicationData});
+    console.log({ addressData, applicationData });
   }, []);
 
   const addresses = [
@@ -47,7 +50,7 @@ export default function Review({ addressData, applicationData }) {
     },
     {
       name: "Postal Code",
-      detail:addressData.postalCode,
+      detail: addressData.postalCode,
     },
     {
       name: "Country",
@@ -77,7 +80,7 @@ export default function Review({ addressData, applicationData }) {
         ))}
       </List>
       <Grid container spacing={2}>
-        <Grid item container direction="column" >
+        <Grid item container direction="column">
           <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
             Application Summary
           </Typography>
@@ -88,7 +91,10 @@ export default function Review({ addressData, applicationData }) {
                   <Typography gutterBottom>{application.name}</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography gutterBottom sx={{ color: "gray", width:'100%' }}>
+                  <Typography
+                    gutterBottom
+                    sx={{ color: "gray", width: "100%" }}
+                  >
                     {application.detail}
                   </Typography>
                 </Grid>
@@ -105,6 +111,7 @@ export default function Review({ addressData, applicationData }) {
           >
             {applicationData.experience}
           </Typography>
+        
         </Grid>
       </Grid>
     </React.Fragment>

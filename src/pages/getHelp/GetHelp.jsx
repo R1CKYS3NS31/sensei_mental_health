@@ -14,7 +14,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AddressForm from "../../components/getHelp/addressForm/AddressForm";
 import ApplicationForm from "../../components/getHelp/applicationForm/ApplicationForm";
 import Review from "../../components/getHelp/review/Review";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 function Copyright() {
   return (
@@ -42,6 +42,7 @@ export default function GetHelp({ disorders, psychiatrists }) {
   const [addressData, setAddressData] = useState({});
   const [applicationData, setApplicationData] = useState({});
   const [disable, setDisable] = useState(false);
+  const [mailto, setMailto] = useState("");
 
   function getStepContent(step) {
     switch (step) {
@@ -80,10 +81,16 @@ export default function GetHelp({ disorders, psychiatrists }) {
   };
   const getApplicationData = (data) => {
     setApplicationData(data);
+
     // if (data) {
     //   setDisable(false);
     // }
   };
+  useEffect(() => {
+    setMailto(
+      `mailto:derricksonndambuki@gmail.com?subject=${applicationData.disorder} Patient&body=My name is ${addressData.lastName}. Please reach back via this mail${addressData.email}. `
+    );
+  }, [applicationData, addressData]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -136,6 +143,10 @@ export default function GetHelp({ disorders, psychiatrists }) {
                     width: "100%",
                     backgroundColor: "lightgrey",
                     fontWeight: 600,
+                  }}
+                  onClick={(e) => {
+                    window.location.href = mailto;
+                    e.preventDefault();
                   }}
                 >
                   Home
