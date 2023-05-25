@@ -4,8 +4,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
-import { width } from "@mui/system";
-import { Button, Link } from "@mui/material";
 // import { Link } from "react-router-dom";
 
 export default function Review({ addressData, applicationData }) {
@@ -22,7 +20,7 @@ export default function Review({ addressData, applicationData }) {
 
     console.log({ addressDetails, applicationDetails });
     console.log({ addressData, applicationData });
-  }, []);
+  }, [addressData, addressDetails, applicationData,applicationDetails]);
 
   const addresses = [
     {

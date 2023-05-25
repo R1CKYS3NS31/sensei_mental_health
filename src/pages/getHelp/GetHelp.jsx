@@ -41,7 +41,7 @@ export default function GetHelp({ disorders, psychiatrists }) {
   const [activeStep, setActiveStep] = useState(0);
   const [addressData, setAddressData] = useState({});
   const [applicationData, setApplicationData] = useState({});
-  const [disable, setDisable] = useState(false);
+  const [disable] = useState(false);
   const [mailto, setMailto] = useState("");
 
   function getStepContent(step) {

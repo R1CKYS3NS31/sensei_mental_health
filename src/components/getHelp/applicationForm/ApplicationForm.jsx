@@ -40,7 +40,7 @@ export default function ApplicationForm({
     });
   };
   psychiatrists
-    .filter((psychiat) => psychiat.specialization == disorder)
+    .filter((psychiat) => psychiat.specialization === disorder)
     .map((psychia) => console.log(psychia));
 
   return (
