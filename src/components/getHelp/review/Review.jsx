@@ -59,7 +59,7 @@ export default function Review({ addressData, applicationData }) {
   const application = [
     { name: "Category of Help", detail: applicationData.disorder },
     { name: "Specialized Psychiatrist", detail: applicationData.psychiatrist },
-    { name: "Proposed Date of Session", detail: applicationData.sessionDate },
+    { name: "Proposed Date of Session", detail:new Date(applicationData.sessionDate).toDateString() +' '+ new Date(applicationData.sessionDate).toLocaleTimeString() },
   ];
 
   return (
